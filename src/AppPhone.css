@@ -1,0 +1,12 @@
+@media only screen and (max-width: 480px){
+    .landingPage {
+        min-height: 100vh;
+        width: 100%;
+    }
+    .landingPage .landingPageImage {
+        width: 100%;
+    }
+    .landingPage .navigations {
+        height: 60vh;
+    }
+}
