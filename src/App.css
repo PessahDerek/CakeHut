@@ -87,6 +87,7 @@ nav  #insta img {
   animation-duration: 30s;
   animation-fill-mode: both;
   animation-direction:alternate;
+  animation-timing-function: linear;
   -o-animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -99,7 +100,7 @@ nav  #insta img {
   from{background-size: 100% 100%;}
   to{background-size: 200% 200%;}
 }
-.landingPage .navigations {
+.navigations {
   width: 65vh;
   text-align: center;
   display: flex;
@@ -153,4 +154,81 @@ nav  #insta img {
   text-align: center;
   justify-content: space-around;
   color: #D791FF;
+}
+/** catalogue styling*/
+.catalogue {
+  width: 100%;
+  min-height: 100vh;
+}
+.catalogue nav {
+  width: 100%;
+  height: 15vh;
+  line-height: 15vh;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+.catalogSubPage{
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+}
+.catalogSubPage .navigations {
+}
+.showCatalogue {
+  width: 65%;
+  max-height: 85vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.showCatalogue .cakeTray {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.showCatalogue .cakeTray .cakeList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/** styiling of order section */
+.order {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+.order .quoteImage {
+  width: 30%;
+  height: inherit;
+  background: url(./images/12.jpeg) rgba(0, 0, 0, 0.349);
+  background-blend-mode: multiply;
+}
+.order .orderSide {
+  width: 70%;
+  min-height: 100vh;
+}
+.orderSide nav {
+  display: flex;
+  justify-content: space-around;
+}
+.order nav .chooseCustom {
+  display: flex;
+  flex-wrap: wrap;
+}
+.orderSide nav a {
+  width: 10vmax;
+  height: 5vmin;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
+  background-color: transparent;
+  border-bottom: 2px ;
+  text-underline-offset: 0.5em;
+}
+.orderSide nav a:hover {
+  text-decoration: underline 1vh solid #F67A7A;
 }

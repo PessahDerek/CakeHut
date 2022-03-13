@@ -10,13 +10,7 @@ function Selections(props) {
         <h2>{props.title}</h2>
         <div className="options">
             {props.options.map(
-                option => <button onClick={()=>{
-                  document.querySelector(option.link).scrollIntoView(
-                    {behavior: 'smooth'}
-                  )
-                }} key={
-                    props.options.indexOf(option)
-                } >{option.name}</button>
+                option => <button key={props.options.indexOf(option)} onClick={option.func}>{option.name}</button>
             )}
         </div>
     </div>

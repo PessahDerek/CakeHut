@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
 import './AppPhone.css'
-import './data.json';
+import {useState} from 'react'
 import logo1 from './images/logo1.png';
 import logo2 from './images/logo2.png';
 import whats from './images/whatsapp.png';
@@ -10,8 +10,34 @@ import gmail from './images/gmail.png';
 import insta from './images/insta.png';
 import Selections from './components/Selections';
 import landing1 from './images/landing1.jpg';
+import CakeItem from './components/CakeItem';
+import Catalogue from './components/Catalogue'
+import RegularOrder from './components/RegularOrder';
+
+import one from './images/1.jpeg';
+import two from './images/2.jpeg';
+import three from './images/3.jpeg';
+import four from './images/4.jpeg';
+import five from './images/5.jpeg';
+import six from './images/6.jpeg';
+import seven from './images/7.jpeg';
+import eight from './images/8.jpeg';
+import nine from './images/9.jpeg';
+
+const weddings = [one, two, three, four, five, six];
+const graduation = [one, two, three, four, five, six];
+const anniversary = [one, two, three, four, five, six]
+const valentines = [one, two, three, four, five, six];
+const birthday = [one, two, three, four, five, six];
 
 function App() {
+  var [cakeFamily, setCakeFam] = useState(birthday);
+  function differentFamily(fam){
+    setCakeFam(fam);
+  }
+  function ScrollTo(element){
+    document.querySelector(element).scrollIntoView({behavior: 'smooth'});
+  }
   return (
     <div className="App">
       <nav>
@@ -40,12 +66,13 @@ function App() {
         <div className="navigations">
           <Selections 
             title="Welcome"
+            function="scroll"
             options={[
-              {name: "About", link: ".homePage"},
-              {name: "Catalogue", link: ".catalogue"},
-              {name: "Order", link: ".order"},
-              {name:"Careers", link: ""},
-              {name: "Events", link: ".events"}
+              {name: "About", func: ()=>ScrollTo(".homePage")},
+              {name: "Catalogue", func: ()=>ScrollTo(".catalogue")},
+              {name: "Order", func: ()=>ScrollTo(".order")},
+              {name:"Careers", func: ()=>ScrollTo("")},
+              {name: "Events", func: ()=>ScrollTo(".events")}
             ]}
           />
         </div>
@@ -80,6 +107,27 @@ function App() {
                 <h2>Since 2005</h2>
               </div>
             </div>
+      </div>
+
+      <div className='catalogue'>
+            <Catalogue />
+      </div>
+      <div className="order">
+        <div className='quoteImage'>
+            
+        </div>
+        <div className="orderSide">
+          <nav>
+            <h1>Make Order</h1>
+            <div className="chooseCustom">
+              <a href="#" onClick="">Regular Order</a>
+              <a href="#" onClick="">Cusome Order</a>
+            </div>
+          </nav>
+          <div className="makeOrder">
+            <RegularOrder />
+          </div>
+        </div>
       </div>
     </div>
   );
