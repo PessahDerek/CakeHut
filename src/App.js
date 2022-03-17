@@ -13,6 +13,8 @@ import landing1 from './images/landing1.jpg';
 import CakeItem from './components/CakeItem';
 import Catalogue from './components/Catalogue'
 import RegularOrder from './components/RegularOrder';
+import CustomOrder from './components/CustomOrder';
+import eventImg from './images/event.png';
 
 import one from './images/1.jpeg';
 import two from './images/2.jpeg';
@@ -31,9 +33,9 @@ const valentines = [one, two, three, four, five, six];
 const birthday = [one, two, three, four, five, six];
 
 function App() {
-  var [cakeFamily, setCakeFam] = useState(birthday);
-  function differentFamily(fam){
-    setCakeFam(fam);
+  var [orderType, setOrderType] = useState(<RegularOrder />);
+  function chooseOrder(order){
+    setOrderType(order);
   }
   function ScrollTo(element){
     document.querySelector(element).scrollIntoView({behavior: 'smooth'});
@@ -72,7 +74,7 @@ function App() {
               {name: "Catalogue", func: ()=>ScrollTo(".catalogue")},
               {name: "Order", func: ()=>ScrollTo(".order")},
               {name:"Careers", func: ()=>ScrollTo("")},
-              {name: "Events", func: ()=>ScrollTo(".events")}
+              {name: "Events", func: ()=>ScrollTo(".eventPage")}
             ]}
           />
         </div>
@@ -120,13 +122,38 @@ function App() {
           <nav>
             <h1>Make Order</h1>
             <div className="chooseCustom">
-              <a href="#" onClick="">Regular Order</a>
-              <a href="#" onClick="">Cusome Order</a>
+              <a onClick={()=>chooseOrder(<RegularOrder/>)}>Regular Order</a>
+              <a onClick={()=>chooseOrder(<CustomOrder />)}>Custom Order</a>
             </div>
           </nav>
           <div className="makeOrder">
-            <RegularOrder />
+            {orderType}
           </div>
+        </div>
+      </div>
+
+      <div className='eventPage'>
+        <nav><h1>Events</h1></nav>
+        <div className='event'>
+            <div className='eventImg'>
+              <img src={eventImg} />
+            </div>
+            <div className='eventForm'>
+              <article>
+                We'd be really delighted if you invited us to be part of your
+                event🤗. 
+              </article>
+              <article>
+                Just leave your name, email and/or phone number, 
+                we'll reach out to you
+              </article>
+              <form>
+                <input type="text" placeholder='name' />
+                <input type='email' placeholder="yourEmail" />
+                <input type="date" placeholder="delivery date" />
+                <button type='button'>Submit</button>
+              </form>
+            </div>
         </div>
       </div>
     </div>

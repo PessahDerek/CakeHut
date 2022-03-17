@@ -27,6 +27,7 @@
 
 nav {
   width: 100%;
+  min-height: 15vh;
   height: fit-content;
   margin-top: 1%;
   display: flex;
@@ -125,9 +126,9 @@ nav  #insta img {
   margin-top: 15%;
   margin-left: 20%;
   text-align: center;
-  font-size: 3vmin;
+  font-size: 1.1em;
 }
-.homePage .text article h1 {
+ h1 {
   color: #D791FF;
   font-size: 6vmin;
 }
@@ -175,13 +176,11 @@ nav  #insta img {
   justify-content: center;
   margin: 0;
 }
-.catalogSubPage .navigations {
-}
+
 .showCatalogue {
   width: 65%;
-  max-height: 85vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+  min-height: 85vh;
+  height: fit-content;
   display: flex;
   flex-wrap: wrap;
 }
@@ -196,6 +195,10 @@ nav  #insta img {
 }
 
 /** styiling of order section */
+.makeOrder {
+  display: flex;
+  justify-content: space-around;
+}
 .order {
   width: 100%;
   min-height: 100vh;
@@ -232,3 +235,28 @@ nav  #insta img {
 .orderSide nav a:hover {
   text-decoration: underline 1vh solid #F67A7A;
 }
+
+.eventPage {
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+}
+.eventPage .event {
+  width: 100%;
+  height: fit-content;
+  min-height: 85vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.eventPage .eventImg {
+  width: 80vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+.eventPage .eventForm  {
+  width: 50%;
+  text-align: center;
+}
+

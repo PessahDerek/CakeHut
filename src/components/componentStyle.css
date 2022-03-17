@@ -84,61 +84,57 @@
 .regularOrder {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 20%;
+    margin-top: 2%;
 }
 .regularOrder .cakeImage {
     width: 30vmin;
     height: 30vmin;
-    background-color: #8F8FDC;
+    margin-bottom: 5%;
+}
+.orderForms {
+    width: 80%;
+    height: 70vh;
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+}
+#orderForms .cakeImage {
+    display: none;
+}
+.orderForms .cakeImage {
+    width:20vh;
+    height: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    background-color: black;
 }
 form {
-    width: 30vmax;
-    height: 50vh;
-    min-height: fit-content;
+    width: 50%;
+    margin-left: 25%;
+    height: fit-content;
     display: flex;
-    font-size: 1.3em;
     flex-direction: column;
-    justify-content: space-around;
 }
-form div {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1%;
-    justify-content: space-around;
-}
-.buy {
-    flex-direction: column;
-    width:  25vmax;
-}
-
-form label {
-    width: 10vmax;
-    height: 2vmax;
-    line-height: 2vmax;
+form input, form select {
+    font-size: 1.5em;
+    border: 0.5px rgb(142, 50, 228) solid;
     text-align: center;
-}
-form select {
-    width: 15.2vmax;
-}
-form input, select {
-    width: 15vmax;
-    height: 2vmax;
+    margin: 2%;
     outline: none;
-    font-size: 1.05em;
-    line-height: 3vmax;
-    border: 2px solid black;
-}
-form button, .price{
-    width: 15vmax;
-    height: 5vmin;
-    margin-left: 40%;
-}
-form .price {
-    background-color: #F6E5FF;
-    border: none;
-    text-align: center;
 }
 form button {
-    font-size: 1.05em;
+    width: 50%;
+    font-size: 1.5em;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    color: black;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.329);
     background-color: #F6D17A;
 }
 
@@ -156,4 +152,28 @@ form button {
         height: 6vmax;
         line-height: 6vmax;
     }
+    .orderForms {
+        margin: 10%;
+    }
+    .orderForms .cakeImage {
+        width: 80%;
+        height: 20vh;
+        background-color: red;
+    }
+    form {
+        width: 100%;
+        margin: unset;
+        display: block;
+        text-align: center;
+    }
+    form input, select {
+        width: 30vmax  !important;
+        height: 4vh;
+    }
+    form button , .price {
+        margin: 0;
+        height: 5vh;
+        width: 30vmax !important;
+    }
+    
 }

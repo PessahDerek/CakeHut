@@ -18,7 +18,7 @@ import nine from '../images/9.jpeg';
 const weddings = [one, two, three, four, five, six];
 const graduation = [one, two, three, four, five, six];
 const anniversary = [one, two, three, four, five, six]
-const valentines = [one, two, three, four, five, six, seven, eight];
+const valentines = [one, two, three, four, five, six, seven, eight, nine];
 const birthday = [one, two, three, four, five, six];
 const events = [
     {event: "Birthday", images: birthday},
@@ -33,17 +33,9 @@ function Catalogue() {
     let [view, setView] = useState(pcView());
 
     function chooseCakeFam(fam){
-        setCakeFam(fam)
+        setCakeFam(fam);
     }
-    useLayoutEffect(()=>{
-        window.addEventListener('resize', ()=>{
-            if (window.innerWidth < 600){
-                setView(phoneView());
-            }else{
-                setView(pcView());
-            }
-        })
-    }, [window.innerWidth])
+    
     function pcView(){
         return (
             <div>
@@ -82,6 +74,15 @@ function Catalogue() {
             </div>
         )
     }
+    useLayoutEffect(()=>{
+        window.addEventListener('resize', ()=>{
+            if (window.innerWidth < 600){
+                setView(phoneView());
+            }else{
+                setView(pcView());
+            }
+        })
+    }, [window.innerWidth])
     return view;
 }
 
