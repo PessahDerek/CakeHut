@@ -1,0 +1,76 @@
+/** styling headerimg component*/
+.headerImg {
+    width: 100%;
+    overflow: hidden;
+}
+.headerImg .image{
+    width: 120%;
+    height: 30vmax;
+    overflow: hidden;
+    top: 13vmax;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0px 0px 50% 50%;
+    background-color: rgba(0, 0, 0, 0.459);
+}
+.headerImg .image img {
+    width: 83.3333333333333%;
+    height: 50vmax;
+    margin-left: 8.3333333333333%;
+    top: -50%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}
+.image .title, nav {
+    position: absolute;
+    z-index: 100;
+}
+.image .title {
+    left: 15%;
+    top: 10%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.image .title h1 {
+    font-size: 8em;
+}
+.image nav {
+    width: 40vmax;
+    top: 20%;
+    left: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+.contIcon {
+    font-size: 1.8em;
+    color: rgb(244, 164, 255);
+}
+
+
+/** styling for offer cakes*/
+.offer {
+    width: 70%;
+    height: 40vmax;
+    left: 15%;
+    text-align: center;
+}
+.offer .offerBanner {
+    width: 90%;
+    height: 30vmax;
+    margin: 5%;
+    background-color: rgba(255, 192, 203, 0.315);
+    border-radius: 15px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 60% 40%;
+}
+.offerBanner img {
+    width: 150%;
+    left: -10%;
+}
+.offerBanner .offerText {
+    width: 100%;
+    height: 30vmax;
+    line-height: 5vmax;
+    text-align: center;
+}
