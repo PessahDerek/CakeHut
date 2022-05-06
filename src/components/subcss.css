@@ -1,0 +1,53 @@
+/** cake item styling */
+.cakeItem {
+    width: 20vmax;
+    height: fit-content;
+    text-align: center;
+    margin-left: 5%;
+}
+.cakeItem .cakeImg {
+    width: 95%;
+    height: 20vmin;
+    padding: 2.5%;
+    display: flex;
+    justify-content: space-around;
+}
+.cakeImg img {
+    width: 100%;
+    object-fit: contain;
+}
+
+/** basket styling */
+.cartStyle {
+    width: 3em;
+    height: 3em;
+    position: fixed;
+    top: 50%;
+    left: 0;
+}
+.cartStyle .gibasket {
+    font-size: 2.5em;
+    color: orangered;
+}
+.gibasket:active {
+    color: black;
+}
+.cartStyle h3 {
+    position: absolute;
+    color: purple;
+    top: 0%;
+    left: 80%;
+}
+
+@media only screen and (max-width: 640px){
+    .cakeItem {
+        width: 40vmax;
+        margin-left: 2.5%;
+    }
+    .cakeImg {
+        height: 40vmin !important;
+    }
+    .cakeImg img {
+        height: 40vmin;
+    }
+}
