@@ -35,12 +35,11 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: red;
+  background-color: white;
 }
 .orderForm {
   width: 40%;
   height: max-content;
-  background-color: violet;
 }
 .orderForm .orderImg {
   width: 80%;
@@ -56,13 +55,18 @@ html, body {
 .orderForm .orderDetails {
   display: grid;
   grid-auto-flow: row;
-  row-gap: 3%;
+  row-gap: %;
 }
 .orderForm input, select {
   width: 80%;
   height: 3em;
   margin-left: 10%;
-  background-color: ;
+  background-color: transparent;
+  border-bottom: 2px solid pink;
+}
+select::selection{
+  height: 3em;
+  background-color: rgb(87, 87, 255);
 }
 
 @media only screen and (max-width: 640px){
