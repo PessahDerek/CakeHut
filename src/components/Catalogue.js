@@ -1,22 +1,21 @@
-import React from 'react'
+import {React, useEffect, useState} from 'react'
 import './componentstyle.css'
 import CakeItem from './CakeItem'
-import Cheesecake from '../images/cheesecakePng.png'
-import Fruitcake from '../images/fruitcakePng.png'
-import Cupcake from '../images/pexels-jess-png.png'
-import Spongecake from '../images/spongecake.jpg'
 
 
 function Catalogue(props) {
-    const cakes = props.cakelist
+  const [cakes, setCakes] = useState(props.cakelist)
+  useEffect(()=>{
+    setCakes(props.cakelist)
+  }, [props])
   return (
     <div className='catalogue'>
         <h1>{props.title}</h1>
         <div className='catalist'>
             {cakes.map(cake => <CakeItem key={cakes.indexOf(cake)} 
-              cakeName={cake.cake}
-              price={cake.price}
-              img={cake.img}
+              cakeName={cake.cakeName}
+              price={cake.cakePrice}
+              img={cake.cakeImage}
               mode={props.mode}
             />)}
         </div>

@@ -2,13 +2,21 @@ import {React, useState, useEffect}from 'react'
 import './subcss.css'
 import {GiBasket} from 'react-icons/gi'
 import { useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom'
+import Receipt from '../store/receipt.json'
 
 function Basket(props) {
     const cartSize = useSelector((state)=> state.order);
-    const navigate = useNavigate()
+    const orderObject = document.querySelector(".orderWidget")
     const  handleClick = () =>{
-        navigate('/order')
+      try {
+        orderObject.style.opacity = '1'
+        orderObject.style.left = '5%'
+        orderObject.style.width = "90%"
+        orderObject.style.height = '80vh'
+      } catch (error) {
+        alert("Add Product to Basket")
+      }
+      
     }
   return (
     <div className='cartStyle'>

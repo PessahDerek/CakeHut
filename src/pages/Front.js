@@ -6,43 +6,29 @@ import Catalogue from '../components/Catalogue'
 import Basket from '../components/Basket'
 import AfterSales from '../components/AfterSales'
 import { actions } from '../store/store';
+import thumbnail from '../images/thumbnail.png'
 
-import Cheesecake from '../images/cheesecakePng.png'
-import Fruitcake from '../images/fruitcakePng.png'
-import Cupcake from '../images/pexels-jess-png.png'
-import Spongecake from '../images/spongecake.jpg'
-
-import birthday from '../images/birthdayPng.png'
-import wedding from '../images/weddingPng.png'
-import anniversary from '../images/anniversaryPng.png'
-import graduation from '../images/graduationPng.png'
 import Footer from '../components/Footer'
+import axios from 'axios'
+import { type } from '@testing-library/user-event/dist/type'
 
-var cakes = [
-  {cake: "Cheese Cake", price: 800, img: Cheesecake},
-  {cake: "Fruit Cake", price: 1000, img: Fruitcake},
-  {cake: "Sponge Cake", price: 800, img: Spongecake},
-  {cake: "Cup Cake", price: 800, img: Cupcake},
-]
+import {our_cakes, event_cakes} from '../images/cakes'
+import Order from './Order'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 
-var eventCakes = [
-  {cake: "Birthday", price: "Varies", img: birthday},
-  {cake: "Wedding", price: "Varies", img: wedding},
-  {cake: "Anniversary", price: "Varies", img: anniversary},
-  {cake: "Graduation", price: "Varies", img: graduation},
-]
+
 function Front() {
   const [cartNum, setCartNum] = useState();
   function handleCart(value){
-    setCartNum(value)
-    console.log("Huuh")
+    setCartNum(value);
   }
+  
   return (
       <div className='front'>
         <Headerimg />
         <Offer />
-        <Catalogue title="Cakes in our Menu" cakelist={cakes} mode="buy" />
-        <Catalogue title="Cakes for your Events" cakelist={eventCakes} mode="quote" />
+        <Catalogue title="Cakes in our Menu" cakelist={our_cakes}  mode="buy" />
+        <Catalogue title="Cakes for your Events" cakelist={event_cakes} mode="quote" />
         <Basket/>
         <AfterSales />
         <Footer />

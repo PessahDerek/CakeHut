@@ -9,7 +9,6 @@ const counterSlice = createSlice({
         increment(state, action) {
             Receipt.basket.push(action.payload)
             state.order += 1;
-            console.log(Receipt.basket)
         },
         decrement (state, action) {
             for (var i = 0; i < Receipt.basket.length; i++){
@@ -18,7 +17,6 @@ const counterSlice = createSlice({
                     break;
                 }
             }
-            console.log(Receipt.basket)
             state.order -= 1
         },
         addBy(state, action){

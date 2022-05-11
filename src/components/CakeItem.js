@@ -5,9 +5,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { actions } from '../store/store';
 import Receipt from '../store/receipt.json'
 import { act } from 'react-dom/test-utils';
+import { type } from '@testing-library/user-event/dist/type';
 
 // maintain as global
-
 
 function CakeItem(props) {
   const [buyButtonTxt, setbuyButtonTxt] = useState("Add to Basket")
@@ -41,6 +41,7 @@ function CakeItem(props) {
       return getQuote
     }
   }
+  
   return (
     <div className='cakeItem'>
         <div className='cakeImg' >
