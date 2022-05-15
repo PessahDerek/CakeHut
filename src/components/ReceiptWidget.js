@@ -1,18 +1,18 @@
-import {React, useState, useEffect} from 'react'
+import {React} from 'react'
 import './subcss.css'
-import CakeItemInReceipt from './CakeItemInReceipt'
+import OrderForm from './OrderForm'
 
 function ReceiptWidget(props) {
-  const [cakes, setCakes] = useState([{}, {}])
-
   return (
-    <div className='receiptObject'>
-      {cakes.map((cake)=> <CakeItemInReceipt 
-        key={cake.id}
-        cakeName={cake.cakeName}
-        cakePrice={cake.cakePrice}
-        cakeImage={cake.cakeImage}
-      />)}
+    <div className='oneItem'>
+      <div  className='img'>
+        <img src={props.orderList.cakeImage} alt="cake" />
+      </div>
+      <section className='details'>
+        <OrderForm cake={props.orderList.cakeName} 
+          price={props.orderList.cakePrice}
+        />
+      </section>
     </div>
   )
 }

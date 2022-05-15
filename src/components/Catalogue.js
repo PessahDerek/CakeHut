@@ -17,6 +17,7 @@ function Catalogue(props) {
               price={cake.cakePrice}
               img={cake.cakeImage}
               mode={props.mode}
+              func={props.func}
             />)}
         </div>
     </div>
