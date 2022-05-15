@@ -6,14 +6,13 @@ const multer = require("multer");
 const cors = require("cors");
 const fs = require("fs");
 const route = require('./routes/route')
-app.use(cors());
 const dotenv = require('dotenv')
 dotenv.config()
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false, limit: '10mb' }));
+app.use(bodyParser.json({limit: '10mb'}));
 app.use('/app', route)
-
 
 mongoose.connect(
     process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true }
@@ -33,7 +32,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-
+app.use(cors())
 app.listen(process.env.PORT, () => {
   console.log("server running successfully");
 });

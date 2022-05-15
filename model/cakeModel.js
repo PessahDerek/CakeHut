@@ -10,9 +10,13 @@ const ourCakes = new mongoose.Schema({
         required: true
     },
     cakeImage: {
-        data: Buffer,
-        contentType: String,
+        type: String
     }
 });
 
-module.exports = cakeModel = mongoose.model("cakes", ourCakes)
+
+
+
+const cakeModel = mongoose.model("cakes", ourCakes)
+
+module.exports = cakeModel
