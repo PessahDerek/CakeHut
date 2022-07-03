@@ -1,19 +1,27 @@
 import {React} from 'react'
 import './subcss.css'
 import QuoteForm from './QuoteForm';
+import {useNavigate} from 'react-router-dom'
 
 function CakeItem(props) {
   const id = props.cakeName + String(props.price)
+  const navigate = useNavigate()
+
+  // open order page with cake details
   const handleAddtoCart = () =>{
-      props.func({id: id, cakeName: props.cakeName, cakePrice: props.price, cakeImage: props.img}, props.mode)
+      var cakeDetails = {id: id, cakeName: props.cakeName, cakePrice: props.price, cakeImage: props.img, mode: props.mode}
+      navigate("/order", {state: {details: cakeDetails}})
   };
+  // open order page with requesting details
   function handleGetQuote(){
-    props.func(<QuoteForm cake={props.cakeName} image={props.img} />, props.mode)
+      var requstDetls = { cakeName: props.cakeName, cakeImage: props.img, mode: props.mode}
+      navigate("/order", {state: {details: requstDetls}});
   }
   const addtoCart = <button onClick={handleAddtoCart} >Order</button>
   const getQuote = <button onClick={handleGetQuote} >Get Quote</button>
   
   const buttonMode = () =>{
+    // mode comes from catalogue parent
     if (props.mode === 'buy'){
       return addtoCart
     } else {

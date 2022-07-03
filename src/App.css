@@ -6,12 +6,13 @@
   outline: transparent;
 }
 @font-face {
-  font-family: onelove;
-  src: url(./fonts/onelove.ttf);
+  font-family: flanella;
+  src: url(./fonts/Shevana-RpKVM.ttf);
 }
 h1 {
-  font-family: onelove, chiller;
+  font-family: 'flanella', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 6vmax;
+  text-align: center;
 }
 button {
   width: 10em;

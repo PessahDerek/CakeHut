@@ -10,24 +10,13 @@ import Order from './Order'
 
 
 function Front() {
-  const [isOrder, setIsOrder] = useState(false);
-  const [order, setOrder] = useState([])
-  const [orderMode, setOrderMode] = useState()
-  
-
-  function handleHide(content, mode){
-    setOrderMode(mode)
-    setOrder(content)
-    setIsOrder(!isOrder)
-  }
-  
+  // write fetch cake function in useEffect and splash screen
   return (
       <div className='front'>
         <Headerimg />
         <Offer />
-        <Catalogue func={handleHide} title="Cakes in our Menu" cakelist={our_cakes}  mode="buy" />
-        <Catalogue func={handleHide} title="Cakes for your Events" cakelist={event_cakes} mode="quote" />
-        {isOrder && <Order order={order} func={handleHide} mode={orderMode} />}
+        <Catalogue title="Cakes in our Menu" cakelist={our_cakes}  mode="buy" />
+        <Catalogue title="Cakes for your Events" cakelist={event_cakes} mode="quote" />
         <AfterSales />
         <Footer />
       </div>

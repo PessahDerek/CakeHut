@@ -3,48 +3,42 @@ import '../App.css'
 import ReceiptWidget from '../components/ReceiptWidget'
 import {MdClose} from 'react-icons/md'
 import CustomQuote from '../components/CustomQuote'
+import {useLocation, useNavigate} from 'react-router-dom'
+import OrderForm from '../components/OrderForm'
+import QuoteForm from '../components/QuoteForm'
+import Spinner from '../components/Spinner'
 
 function Order(props) {
-    const [buy, setBuy] = useState({custom: false, buying: false})
-    var thisWidget = document.querySelector(".orderWidget")
-    
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [order, setOrder] = useState();
+    const [show, setShow ] = useState(false)
+
     useEffect(()=>{
-        const orderObject = document.querySelector(".orderWidget")
-        orderObject.style.opacity = '1'
-        orderObject.style.left = '5%'
-        orderObject.style.width = "90%"
-        orderObject.style.height = '80vh'
-        if (props.mode === 'buy'){
-            setBuy(setBuy=>({...setBuy, buying: true}))
-        } else {
-            setBuy(setBuy=>({...setBuy, custom: true}))
+        if (location.state === null){
+            navigate('/')
+        }else{
+            setOrder(location.state.details)
+            console.log(order)
         }
-    }, [props.mode])
+    }, [])
 
-    const handleExit = (e) =>{
-        try {
-            thisWidget.style.opacity = '0'
-            thisWidget.style.width = '0'
-            thisWidget.style.marginleft = '-50%'
-            thisWidget.style.height = '0'
-            props.func()
-            setBuy({custom: false, buying: false })
-        } catch (error) {
-            thisWidget = e.target.parentNode.parentNode.parentNode;
-            handleExit()
-        }
+    try {
+        return(
+            <>
+                {order.mode === "buy" && <OrderForm 
+                    img={order.cakeImage}
+                    id={order.id}
+                    name={order.cakeName}
+                    price={order.cakePrice}
+                />}
+                {order.mode === "quote" && <QuoteForm />}
+            </>
+        )
+    } catch (error) {
+        console.log('hello')
+        return( <Spinner />)
     }
-    
-    return (
-        <div className='orderWidget'>
-            <nav><button onClick={handleExit}><MdClose /></button></nav>
-
-            <div>
-                {buy.buying && <ReceiptWidget orderList={props.order} />}
-                {buy.custom && <CustomQuote order={props.order} />}
-            </div>
-        </div>
-    )
 }
 
 export default Order

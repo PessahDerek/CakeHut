@@ -26,16 +26,15 @@
     mix-blend-mode: multiply;
     position: fixed;
 }
-.image .title {
-    margin-left: 20%;
-}
+
 .image .title, nav {
     position: absolute;
     z-index: 100;
 }
 .image .title {
-    left: 15%;
+    left: 5%;
     top: 10%;
+    width: 90%;
     color: rgb(255, 255, 255);
     text-align: center;
 }
@@ -60,22 +59,31 @@
 }
 .offer .offerBanner {
     width: 90%;
-    height: 30vmax;
+    height: 18em;
     margin: 5%;
     background: linear-gradient(45deg, rgba(128, 0, 128, 0.144), rgba(255, 196, 87, 0.308));
     border-radius: 15px;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 60% 40%;
-}
-.offerBanner img {
-    width: 100%;
-    left: -10%;
+    grid-auto-columns: 50% 50%;
 }
 .offerBanner .offerText {
     width: 100%;
-    height: 30vmax;
+    top: 1.5em;
+    height: 15em !important;
+    display: grid;
+    grid-auto-flow: row;
+    height: inherit;
     text-align: center;
+}
+.offerText * {
+    margin-left: auto;
+    margin-right: auto;
+}
+.offer .offerBanner img {
+    width: 100%;
+    height: inherit;
+    object-fit: contain;
 }
 
 /** styling catalogue*/
@@ -86,6 +94,7 @@
     margin-left: 5%;
     background-color: #ff6a6d17;
     border-radius: 15px;
+    padding-bottom: 5%;
 }
 .catalogue .catalist {
     width: 90%;
@@ -116,21 +125,47 @@ footer {
     height: 10vmax;
     justify-content: center;
 }
-
+.spinner {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    border: 6px solid #FCEAD1;
+    border-top: 6px solid #FF7C9D;
+    position: absolute;
+    top: 40vmax;
+    left: 37vmin;
+    animation-name: spin;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+    animation-fill-mode:both;
+    animation-iteration-count: infinite;
+}
+@keyframes spin {
+    from{transform: rotateZ(360deg);
+        border: 6px solid #FCEAD1; 
+        border-top: 6px solid #FF7C9D;}
+    to{}
+}
 
 
 @media only screen and (max-width: 640px) {
     .headerImg .image {
         background-color: rgba(0, 0, 0, 0.5);
     }
-    .image .title {
-        margin-left: 5%;
-    }
     .image .title h1{
         color: transparent;
         background: linear-gradient(45deg, rgb(169, 83, 255), rgb(255, 206, 198));
         background-clip: text;
         font-size: 5em;
+    }
+    /** styling for cake banner */
+    .offer .offerBanner {
+        height: 12em;
+    }
+    .offerBanner .offerText {
+        height: 10em !important;
+        top: 1em;
     }
     
     /** styling for cake on offer */

@@ -40,91 +40,35 @@
 }
 
 /** order section styling */
-.receiptObject {
-    width: 90%;
-    left: 5%;
-    top: 10%;
-    height: fit-content;
-    display: grid;
-    grid-auto-flow: row;
-    color: black;
-}
-
-.oneItem {
-    width: 90%;
-    left: 5%;
-    top: 10%;
-    text-align: center;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: whitesmoke;
-    border-radius: 15px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.137);
-}
-.oneItem .img {
-    width: 50vmin;
-    height: 50vmin;
-    overflow: hidden;
-}
-.oneItem .img img {
-    width: 100%;
-    object-fit:contain;
-}
-.oneItem .details {
-    width: 90%;
-    height: 100%;
-}
- form {
-    width: 100%;
-    text-align: center;
-    display: grid;
-    grid-auto-flow: row;
-}
-.quoteForm {
+.orderForm {
     width: 80%;
-    left: 10%;
+    margin-left: 10%;
+    text-align: center;
+    display: flex;
 }
-.quoteForm .image {
+.orderForm .image {
+    width: 40%;
+    height: 40vmin;
     overflow: hidden;
 }
-.quoteForm .image img {
-    width: 20%;
+.orderForm .image img {
+    width: 100%;
+    height: 40vmin;
     object-fit: contain;
 }
-form input, label {
-    width: 100%;
+.orderForm form {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 2%;
+}
+input, select {
+    width: 15em;
     height: 3em;
-    line-height: 3em;
+    border-radius: 10px;
     text-align: center;
-}
-form input {
-    border-bottom: 2px solid #FFC0CB;
-}
-label {
-    background-color: #FFC0CB;
-}
-textarea {
-    height: 20vmax;
-}
-form button {
-    top: 2%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.quoteNotif {
-    width: 25vmax;
-    height: 10vmax;
-    background-color: #FFC0CB;
-    border-radius: 15px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.096);
-    text-align: center;
-    line-height: 10vmax;
-    position: absolute;
-    left: 34%;
-    z-index: 2000;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.171);
 }
 
 @media only screen and (max-width: 640px){
