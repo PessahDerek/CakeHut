@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9e4b3c94.css",
+    "main.js": "/static/js/main.d391600c.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/birthdayPng.png": "/static/media/birthdayPng.f6374ece714b2d619de0.png",
+    "static/media/queencake.png": "/static/media/queencake.0f85248aa19df331d5f8.png",
+    "static/media/graduationPng.png": "/static/media/graduationPng.d356e424a8e1bc531ba5.png",
+    "static/media/anniversaryPng.png": "/static/media/anniversaryPng.ed6f24fb583ea7b4e0ac.png",
+    "static/media/weddingPng.png": "/static/media/weddingPng.671111fae885daa4ac0c.png",
+    "static/media/fruitcakePng.png": "/static/media/fruitcakePng.bec4ec1781980ea7f4e9.png",
+    "static/media/spongecake.png": "/static/media/spongecake.38edddedd4de14d57367.png",
+    "static/media/deliv.png": "/static/media/deliv.a769393cc635a1666d50.png",
+    "static/media/cheesecakePng.png": "/static/media/cheesecakePng.59310082c641bf80989f.png",
+    "static/media/cupcake.jpg": "/static/media/cupcake.e3a567a756c716fe65e5.jpg",
+    "static/media/Shevana-RpKVM.ttf": "/static/media/Shevana-RpKVM.63c63d9e5d2f0fed0b99.ttf",
+    "index.html": "/index.html",
+    "main.9e4b3c94.css.map": "/static/css/main.9e4b3c94.css.map",
+    "main.d391600c.js.map": "/static/js/main.d391600c.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e4b3c94.css",
+    "static/js/main.d391600c.js"
+  ]
+}
