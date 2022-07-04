@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9afbba30.css",
-    "main.js": "/static/js/main.33b5cd66.js",
+    "main.css": "/static/css/main.9e4b3c94.css",
+    "main.js": "/static/js/main.d391600c.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/birthdayPng.png": "/static/media/birthdayPng.f6374ece714b2d619de0.png",
     "static/media/queencake.png": "/static/media/queencake.0f85248aa19df331d5f8.png",
@@ -13,14 +13,14 @@
     "static/media/deliv.png": "/static/media/deliv.a769393cc635a1666d50.png",
     "static/media/cheesecakePng.png": "/static/media/cheesecakePng.59310082c641bf80989f.png",
     "static/media/cupcake.jpg": "/static/media/cupcake.e3a567a756c716fe65e5.jpg",
-    "static/media/onelove.ttf": "/static/media/onelove.2d40e2ffce8be9f94b68.ttf",
+    "static/media/Shevana-RpKVM.ttf": "/static/media/Shevana-RpKVM.63c63d9e5d2f0fed0b99.ttf",
     "index.html": "/index.html",
-    "main.9afbba30.css.map": "/static/css/main.9afbba30.css.map",
-    "main.33b5cd66.js.map": "/static/js/main.33b5cd66.js.map",
+    "main.9e4b3c94.css.map": "/static/css/main.9e4b3c94.css.map",
+    "main.d391600c.js.map": "/static/js/main.d391600c.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9afbba30.css",
-    "static/js/main.33b5cd66.js"
+    "static/css/main.9e4b3c94.css",
+    "static/js/main.d391600c.js"
   ]
 }
