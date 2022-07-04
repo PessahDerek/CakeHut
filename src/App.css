@@ -6,11 +6,11 @@
   outline: transparent;
 }
 @font-face {
-  font-family: flanella;
+  font-family: Shevana;
   src: url(./fonts/Shevana-RpKVM.ttf);
 }
 h1 {
-  font-family: 'flanella', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Shevana', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 6vmax;
   text-align: center;
 }

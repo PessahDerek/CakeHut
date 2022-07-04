@@ -41,13 +41,15 @@
 
 /** order section styling */
 .orderForm {
-    width: 80%;
-    margin-left: 10%;
+    width: 80vw;
+    left: 10vw;
     text-align: center;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    flex-wrap: wrap;
 }
 .orderForm .image {
-    width: 40%;
+    width: 100%;
     height: 40vmin;
     overflow: hidden;
 }
@@ -57,17 +59,46 @@
     object-fit: contain;
 }
 .orderForm form {
+    width: 45vw;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.orderForm form div{
+    width: 20vw;
     display: grid;
     grid-auto-flow: row;
-    row-gap: 2%;
+    grid-auto-rows: auto;
+}
+.orderForm form div * {
+    margin: 2%;
+}
+.orderForm form label {
+    height: 2em;
+    line-height: 2em;
+    font-weight: bolder;
 }
 input, select {
-    width: 15em;
+    width: 100%;
     height: 3em;
     border-radius: 10px;
     text-align: center;
     background-color: white;
     color: black;
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.171);
+}
+form button {
+    margin-left: auto;
+    margin-right: auto;
+}
+textarea {
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 2%;
+    height: 6em;
+    font-family: Arial, Helvetica;
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.171);
 }
 
@@ -81,5 +112,15 @@ input, select {
     }
     .cakeImg img {
         height: 40vmin;
+    }
+    .orderForm {
+        grid-auto-flow: row;
+    }
+    .orderForm form {
+        width: 80vw;
+        flex-direction: column;
+    }
+    .orderForm form * {
+        width: 35vh;
     }
 }

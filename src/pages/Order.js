@@ -1,5 +1,6 @@
 import {React, useState, useEffect} from 'react'
 import '../App.css'
+import './pagestyle.css'
 import ReceiptWidget from '../components/ReceiptWidget'
 import {MdClose} from 'react-icons/md'
 import CustomQuote from '../components/CustomQuote'
@@ -25,15 +26,17 @@ function Order(props) {
 
     try {
         return(
-            <>
+            <div className='orderPage'>
+                <nav><h2>Make Your {order.mode}</h2></nav>
                 {order.mode === "buy" && <OrderForm 
                     img={order.cakeImage}
                     id={order.id}
                     name={order.cakeName}
                     price={order.cakePrice}
                 />}
+                {order.mode === "buy" && <p className='terms'>By Clicking Pay For Order, You consent to payment, you will recieve a payment prompt</p>}
                 {order.mode === "quote" && <QuoteForm />}
-            </>
+            </div>
         )
     } catch (error) {
         console.log('hello')
