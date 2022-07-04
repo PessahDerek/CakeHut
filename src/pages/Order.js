@@ -20,7 +20,7 @@ function Order(props) {
             navigate('/')
         }else{
             setOrder(location.state.details)
-            console.log(order)
+            console.log(order);
         }
     }, [])
 
@@ -35,7 +35,11 @@ function Order(props) {
                     price={order.cakePrice}
                 />}
                 {order.mode === "buy" && <p className='terms'>By Clicking Pay For Order, You consent to payment, you will recieve a payment prompt</p>}
-                {order.mode === "quote" && <QuoteForm />}
+                
+                {order.mode === "quote" && <QuoteForm  
+                    img={order.cakeImage}
+                    name={order.cakeName}
+                />}
             </div>
         )
     } catch (error) {

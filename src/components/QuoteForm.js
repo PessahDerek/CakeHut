@@ -1,59 +1,38 @@
 import axios from 'axios';
 import {React, useState} from 'react'
 import './subcss.css'
+import apis from '../apis';
 const quoteURL = "https://cakemagic.herokuapp.com/app/getquote"
 
 function QuoteForm(props) {
-    const[quote, setQuote] = useState({cake: props.cake, customerName: "", customerContact: ""})
-    const[message, setMessage] = useState("")
-    const[notifShow, setNotifShow] = useState(false)
-    const handleChange = (e, target) => {
-        switch(target){
-            case 'n': setQuote((setQuote)=>({...setQuote, customerName: e.target.value}));
-                        break;
-            case 'c': setQuote((setQuote)=>({...setQuote, customerContact: e.target.value}));
-                        break;
-            default: //
-        }
-    }
-    const handleNotif = (message) =>{
-        setMessage(message);
-        console.log('works')
-        setNotifShow(true)
-        setTimeout(() => {
-            setNotifShow(false)
-        }, 2000);
-    }
-    const handleSubmit = (e)=>{
-        e.preventDefault()
+    const[quoteReq, setQuote] = useState({cake: props.name, customerName: "", customerContact: ""});
+
+    const handleSubmit = async(e) =>{
+        e.preventDefault();
         try {
-            axios
-                .post(quoteURL, quote)
-                .then((res)=>handleNotif(res.data))
-                .catch(err=>{setMessage(err)})
+            await axios.post(apis().requestQuote, quoteReq)
+            .then((res)=>alert(res.data));
         } catch (error) {
-            console.log(error)
+            alert(error.message);
         }
     }
-  return (
-    <form onSubmit={handleSubmit} className="quoteForm">
-        {notifShow && <div className='quoteNotif'>{message}</div>}
-        <div className='image'>
-            <img src={props.image} alt="cake" />
+    
+    return (
+        <div className='orderForm'>
+            <div className='image'>
+                <img src={props.img} />
+            </div>
+            <form onSubmit={handleSubmit}>
+                <p>Hello, Just Fill in your Name and Contacts and we'll reach out to You 🤗</p>
+                <br></br>
+                <input type='text' placeholder='Your Name' />
+                <br/>
+                <input type='text' placeholder='Phone/Email' />
+                <br></br>
+                <button type='submit'>Send Request</button>
+            </form>
         </div>
-        <div>
-            <h2>Hello, just Enter your Name, Email/ Phone Number and we'll reach out to you</h2>
-            <input type="text" value={props.cake} readOnly />
-            <input type='text' value={quote.customerName} onChange={(e)=>handleChange(e, 'n')} 
-                placeholder="Your Name" required
-            />
-            <input type='text' value={quote.customerContact} onChange={(e)=>handleChange(e, 'c')} 
-                placeholder="Email or Phone" required
-            />
-            <button type='submit'>Request Quote</button>
-        </div>
-    </form>
-  )
+    )
 }
 
 export default QuoteForm

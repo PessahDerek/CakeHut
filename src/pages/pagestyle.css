@@ -2,7 +2,6 @@
 .orderPage {
     width: 100vw;
     display: block;
-    outline: 2px solid red;
 }
 .orderPage * {
     margin: 0;

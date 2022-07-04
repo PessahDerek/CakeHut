@@ -1,6 +1,7 @@
 import {React, useState} from 'react'
 import './subcss.css'
 import axios from 'axios'
+import apis from '../apis'
 
 function OrderForm(props) {
     const [cake, setCake] = useState({
@@ -44,12 +45,23 @@ function OrderForm(props) {
             }break;
         }
     } 
+
+    const handleSubmit = async(e) =>{
+        e.preventDefault();
+        try {
+            await axios.post(apis().requestQuote, cake)
+            .then((res)=>(alert(res.data)))
+        } catch (error) {
+            alert(error.message)
+        }
+        
+    }
     return (
         <div className='orderForm'>
             <div className='image'>
                 <img src={props.img} alt="cake" />
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
             <div>
                 <label>Cake Details</label>
                 <input type="text" value={props.name} readOnly />
@@ -71,10 +83,10 @@ function OrderForm(props) {
                 {/**user details start from here */}
                 <input type="text" value={cake.buyerName} placeholder="Your Name" onChange={
                     (e)=>takeInput(e, 'n')
-                }/>
+                } required='true'/>
                 <input type="tel" value={cake.buyerPhone} placeholder="Your Phone Number" onChange={
                     (e)=>takeInput(e, 'p')
-                }/>
+                } required='true' />
                 <select value={cake.deliv} onChange={(e)=>takeInput(e, 'd')}>
                     <option value={true} >Have it delivered to me</option>
                     <option value={false}>I'll Pick it</option>
